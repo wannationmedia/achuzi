@@ -1,69 +1,72 @@
 import Image from "next/image";
+import { AnubisMark } from "@/components/AnubisMark";
+import { GlowButton } from "@/components/GlowButton";
 
-export default function Home() {
+export default function WelcomePage() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert h-5 w-[100px]"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the{" "}
-            <code className="rounded bg-black/[.06] px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-white/[.08]">
-              page.tsx
-            </code>{" "}
-            file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+    <main className="relative flex min-h-screen w-full justify-center overflow-hidden bg-void-field">
+      <div className="flex min-h-screen w-full max-w-md flex-col items-center px-6 pb-10 pt-12 text-center">
+        <p className="font-display text-[11px] tracking-[0.35em] text-gold-bright/80">
+          WANNATION HOLDINGS PRESENTS
+        </p>
+
+        <div className="mt-10">
+          <AnubisMark size={168} pulse />
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+
+        <h1 className="font-display mt-8 text-4xl font-extrabold tracking-wide text-ink text-glow-gold">
+          ACHUZI<span className="text-crimson-bright">#1</span>
+        </h1>
+        <p className="font-display mt-2 text-xs tracking-[0.3em] text-ink-dim">
+          YOUR TOMORROW COMPANION
+        </p>
+
+        <p className="mt-6 max-w-xs text-sm leading-relaxed text-ink-dim">
+          Intelligence in your language. Opportunity in your hands.
+          <br />A brighter tomorrow — together.
+        </p>
+
+        <div className="mt-10 grid w-full max-w-xs grid-cols-3 gap-2 text-[10px] uppercase tracking-wide text-ink-faint">
+          <span className="rounded-full border border-panel-border px-2 py-1">
+            Accessible
+          </span>
+          <span className="rounded-full border border-panel-border px-2 py-1">
+            Multilingual
+          </span>
+          <span className="rounded-full border border-panel-border px-2 py-1">
+            Secure
+          </span>
+        </div>
+
+        <div className="mt-auto flex w-full max-w-xs flex-col gap-3 pt-12">
+          <GlowButton href="/home" variant="primary" className="w-full">
+            Get Started
+          </GlowButton>
+          <GlowButton href="/home" variant="secondary" className="w-full">
+            I Already Have an Account
+          </GlowButton>
+        </div>
+
+        <p className="mt-8 text-[11px] leading-relaxed text-ink-faint">
+          From <span className="text-gold-bright">Venda</span> to the world.
+          <br />
+          Inside Africa. For everyone.
+        </p>
+
+        <div className="mt-6 flex items-center gap-2 opacity-70">
+          <div className="relative h-5 w-5">
             <Image
-              className="dark:invert h-[14px] w-4"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={14}
+              src="/icons/icon-192.png"
+              alt="WANNATION HOLDINGS"
+              fill
+              className="object-contain"
             />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+          </div>
+          <span className="text-[10px] uppercase tracking-[0.25em] text-ink-faint">
+            Powered by WANNATION HOLDINGS
+          </span>
         </div>
-      </main>
-    </div>
+      </div>
+    </main>
   );
 }
