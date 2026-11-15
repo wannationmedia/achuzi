@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useState, useSyncExternalStore } from "react";
 import Link from "next/link";
 import { Mic, Search, ArrowRight } from "lucide-react";
 import { AppShell } from "@/components/AppShell";
@@ -35,11 +35,11 @@ function greetingForNow() {
 export function HomeDashboard() {
   const [tab, setTab] = useState<Tab>("assist");
   const [query, setQuery] = useState("");
-  const [greeting, setGreeting] = useState("Welcome");
-
-  useEffect(() => {
-    setGreeting(greetingForNow());
-  }, []);
+  const greeting = useSyncExternalStore(
+    () => () => {},
+    greetingForNow,
+    () => "Welcome"
+  );
 
   return (
     <AppShell>

@@ -1,11 +1,13 @@
 import Image from "next/image";
 import { AnubisMark } from "@/components/AnubisMark";
 import { GlowButton } from "@/components/GlowButton";
+import { LivingBackground } from "@/components/LivingBackground";
 
 export default function WelcomePage() {
   return (
     <main className="relative flex min-h-screen w-full justify-center overflow-hidden bg-void-field">
-      <div className="flex min-h-screen w-full max-w-md flex-col items-center px-6 pb-10 pt-12 text-center">
+      <LivingBackground />
+      <div className="relative z-10 flex min-h-screen w-full max-w-md flex-col items-center px-6 pb-10 pt-12 text-center">
         <p className="font-display text-[11px] tracking-[0.35em] text-gold-bright/80">
           WANNATION HOLDINGS PRESENTS
         </p>

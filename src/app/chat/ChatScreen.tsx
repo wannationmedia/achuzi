@@ -74,7 +74,7 @@ export function ChatScreen() {
         <Link href="/home" aria-label="Back" className="text-ink-dim">
           <ChevronLeft size={20} />
         </Link>
-        <AnubisMark size={34} />
+        <AnubisMark size={34} mood={typing ? "thinking" : "idle"} />
         <div className="flex-1">
           <p className="text-sm font-semibold text-ink">ACHUZI#1</p>
           <p className="flex items-center gap-1 text-[11px] text-ink-faint">
